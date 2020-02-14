@@ -13,7 +13,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim' 			"required
+Plugin 'VundleVim/Vundle.vim' 			"required
 Plugin 'tpope/vim-fugitive' 			"use git things in vim
 Plugin 'tpope/vim-sensible' 			"required
 Plugin 'preservim/nerdtree'			"filetree
@@ -51,6 +51,8 @@ let g:ctrlp_custom_ignore = {
 let g:indent_guides_enable_on_vim_startup = 1
 
 "for auto-complete
+let g:acp_enableAtStartup = 0
 let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
 
 filetype plugin indent on " Put your non-Plugin stuff after this line
