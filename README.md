@@ -13,8 +13,13 @@ $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
 ### 1-2. Download .vimrc file
+For Mac OS
 ```bash
 $ curl https://raw.githubusercontent.com/LeeSH825/vim-_configs/master/.vimrc -o ~/.vimrc
+```
+For Linux
+```bash
+$ wget https://raw.githubusercontent.com/LeeSH825/vim-_configs/master/.vimrc -o ~/.vimrc
 ```
 ### 1-3. Install Plugins
 ```bash
@@ -50,15 +55,17 @@ or you can just use
 * helping to comment more easily
 - *More Informations on https://github.com/preservim/nerdcommenter*
 
-### 2-7. Shougo/neocomplcache.vim
-* auto-complete framework
-* I use neocomplcache instead of neocomplete, since VIM in Catalina(Mac OS 10.15.3) doesn't enable LUA, which is requirement of neocomplete
-* You are good to use neocomplete if ':echo has("lua")' returns '1'
-- *More Informations on https://github.com/Shougo/neocomplcache.vim*
+### ~~2-7. Shougo/neocomplcache.vim~~
+* Currently not working.
+* ~~auto-complete framework~~
+* ~~I use neocomplcache instead of neocomplete, since VIM in Catalina(Mac OS 10.15.3) doesn't enable LUA, which is requirement of neocomplete~~
+* ~~You are good to use neocomplete if ':echo has("lua")' returns '1'~~
+- ~~*More Informations on https://github.com/Shougo/neocomplcache.vim*~~
 
-### 2-8. nathanaelkane/vim-indent-guides
-* displaying indent levels visually
-- *More Informations on https://github.com/nathanaelkane/vim-indent-guides*
+### ~~2-8. nathanaelkane/vim-indent-guides~~
+* Currently not working.
+* ~~displaying indent levels visually~~
+- ~~*More Informations on https://github.com/nathanaelkane/vim-indent-guides*~~
 
 ### 2-9. vim-airline/vim-airline
 * More informations on status bar
