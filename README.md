@@ -1,5 +1,5 @@
 # vim_configs Guide lines
-##0. Preface 
+## 0. Preface 
 ### 0-1. notations
 #### 0-1.1. $
 * commands at the bash shell
@@ -20,7 +20,7 @@ $ curl https://raw.githubusercontent.com/LeeSH825/vim-_configs/master/.vimrc -o 
 ```bash
 $ vim -c "source %" -c "PluginInstall" -c "q" -c "q"
 ```
-or you can use 
+or you can just use 
 ```
 :source , :PluginInstall , :q! , :q!
 ```
@@ -31,7 +31,7 @@ or you can use
 - *More Informations on https://github.com/VundleVim/Vundle.vim*
 
 ### 2-2. tpope/vim-fugitive
-* enable to use git commands in VIM
+* Enable to use git commands in VIM
 - *More Informations on https://github.com/tpope/vim-fugitive*
 
 ### 2-3. tpope/vim-sensible
