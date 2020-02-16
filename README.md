@@ -68,15 +68,15 @@ $ vim
 * File tree explorer
 - *More Informations on https://github.com/preservim/nerdtree*
 
-### 2-4. vim-syntastic/syntastic
+### 2-4. dense-analysis/ale
 * Syntax checker
-- *More Informations on https://github.com/vim-syntastic/syntastic*
+- *More Informations on https://github.com/dense-analysis/ale*
 
 ### 2-5. preservim/nerdcommenter
 * Helping to comment more easily
 - *More Informations on https://github.com/preservim/nerdcommenter*
 
-### 2-6 zxqfl/tabnine-vim
+### 2-6 zxqfl/tabnine-im
 * Auto-complete framework
 - *More Informations on https://tabnine.com/semantic*
 
@@ -96,9 +96,9 @@ $ vim
 * Color theme "jellybeans"
 - *More Informations on https://github.com/nanotech/jellybeans.vim*
 
-### 2-11. kien/ctrlp.vim
+### 2-11. junegunn/fzf.vim
 * Helping to open files more easily, and more quickly
-- *More Informations on https://github.com/kien/ctrlp.vim*
+- *More Informations on https://github.com/junegunn/fzf.vim*
 
 ### 2-12. terryma/vim-multiple-cursors
 * Enable to select multiple things
@@ -111,6 +111,10 @@ $ vim
 ### 2-14. terryma/vim-smooth-scroll
 * Make scrolling in VIM more pleasant
 - *More Informations on https://github.com/terryma/vim-smooth-scroll*
+
+### 2-15. tpope/vim-surround
+* Manage brackets or quotes more easily
+- *More Informations on https://github.com/tpope/vim-surround*
 ***
 ## 3. Vim local settings
 ### 3-1. set nocompatible
