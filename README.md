@@ -13,19 +13,14 @@ By this time, I would like to set standards for VIM.
 * commands at the VIM shell
 ***
 ## 1. How to patch .vimrc
-### 1-0. Run auto-script.sh
+### 1-0. If you don't want to disturb yourself
 #### There is 'auto-script.sh' file. You can do rest of things in simple way.
 #### You can just download 'auto-script.sh' and run it by double click
+#### (If you have some trouble with running it, you can do $ chmod 644 auto-script.sh)
 #### or
-For Mac OS
 ```bash
-$ curl https://raw.githubusercontent.com/LeeSH825/vim_configs/master/auto-script.sh
-$ ./auto-script.sh
-```
-For Linux
-```bash
-$ wget https://raw.githubusercontent.com/LeeSH825/vim_configs/master/auto-script.sh
-$ ./auto-script.sh
+$ git clone https://github.com/LeeSH825/vim_configs.git
+$ ./vim_configs/auto-script.sh
 ```
 #### Then rest of 1-1~3 will finish.
 
@@ -50,7 +45,7 @@ $ wget https://raw.githubusercontent.com/LeeSH825/vim-_configs/master/.vimrc -o 
 ```
 ### 1-3. Install Plugins
 ```bash
-$ vim -c "source %" -c "PluginInstall" -c "q" -c "q"
+$ vim -c "PluginInstall" -c "q" -c "q"
 ```
 or you can just use 
 ```
