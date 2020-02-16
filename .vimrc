@@ -1,5 +1,4 @@
 call plug#begin('~/.vim/plugged')
-Plug 'VundleVim/Vundle.vim' 			"required
 Plug 'tpope/vim-fugitive' 			"use git things in vim
 Plug 'tpope/vim-sensible' 			"required
 Plug 'preservim/nerdtree'			"filetree
@@ -11,7 +10,7 @@ Plug 'airblade/vim-gitgutter'			"see code changes
 Plug 'nanotech/jellybeans.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'Raimond/delimitMate'
+Plug 'Raimondi/delimitMate'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'zxqfl/tabnine-vim'
 call plug#end()

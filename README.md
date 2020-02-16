@@ -61,63 +61,59 @@ or you can just use
 ```
 ***
 ## 2. Plugins
-### 2-1. VundleVim/Vundle.vim 
-* Plug-in manager for VIM
-- *More Informations on https://github.com/VundleVim/Vundle.vim*
-
-### 2-2. tpope/vim-fugitive
+### 2-1. tpope/vim-fugitive
 * Enable to use git commands in VIM
 - *More Informations on https://github.com/tpope/vim-fugitive*
 
-### 2-3. tpope/vim-sensible
+### 2-2. tpope/vim-sensible
 * basic options for VIM
 - *More Informations on https://github.com/tpope/vim-sensible*
 
-### 2-4. preservim/nerdtree
+### 2-3. preservim/nerdtree
 * file tree explorer
 - *More Informations on https://github.com/preservim/nerdtree*
 
-### 2-5. vim-syntastic/syntastic
+### 2-4. vim-syntastic/syntastic
 * syntax checker
 - *More Informations on https://github.com/vim-syntastic/syntastic*
 
-### 2-6. preservim/nerdcommenter
+### 2-5. preservim/nerdcommenter
 * helping to comment more easily
 - *More Informations on https://github.com/preservim/nerdcommenter*
 
-### 2-7 zxqfl/tabnine-vim
+### 2-6 zxqfl/tabnine-vim
 * Auto-complete framework
 - *More Informations on https://tabnine.com/semantic*
 
-### 2-8. nathanaelkane/vim-indent-guides
+### 2-7. nathanaelkane/vim-indent-guides
 * displaying indent levels visually
 - *More Informations on https://github.com/nathanaelkane/vim-indent-guides*
 
-### 2-9. vim-airline/vim-airline
+### 2-8. vim-airline/vim-airline
 * More informations on status bar
 - *More Informations on https://github.com/vim-airline/vim-airline*
 
-### 2-10. airblade/vim-gitgutter
+### 2-9. airblade/vim-gitgutter
 * indicating changed lines for GIT things
 - *More Informations on https://github.com/airblade/vim-gitgutter*
 
-### 2-11. nanotech/jellybeans.vim
+### 2-10. nanotech/jellybeans.vim
 * color theme "jellybeans"
 - *More Informations on https://github.com/nanotech/jellybeans.vim*
 
-### 2-12 kien/ctrlp.vim
+### 2-11. kien/ctrlp.vim
 * helping to open files more easily, and more quickly
 - *More Informations on https://github.com/kien/ctrlp.vim*
 
-### 2-13 terryma/vim-multiple-cursors
+### 2-12. terryma/vim-multiple-cursors
 * enable to select multiple things
 - *More Informations on https://github.com/terryma/vim-multiple-cursors*
 
-### 2-14 Raimondi/delimitMate
+### 2-13. Raimondi/delimitMate
 * auto-completion for quotes, parens, brackets, etc
 - *More Informations on https://github.com/Raimondi/delimitMate*
 
-### 2-15 terryma/vim-smooth-scroll
+### 2-14. terryma/vim-smooth-scroll
 * Make scrolling in VIM more pleasant
 - *More Informations on https://github.com/terryma/vim-smooth-scroll*
 ***
