@@ -65,7 +65,7 @@ or you can just use
 * Auto-complete framework
 - *More Informations on https://tabnine.com/semantic*
 
-### ~~2-8. nathanaelkane/vim-indent-guides~~
+### 2-8. nathanaelkane/vim-indent-guides
 * displaying indent levels visually
 - *More Informations on https://github.com/nathanaelkane/vim-indent-guides*
 
