@@ -1,21 +1,3 @@
-call plug#begin('~/.vim/plugged')
-Plug 'VundleVim/Vundle.vim' 			"required
-Plug 'tpope/vim-fugitive' 			"use git things in vim
-Plug 'tpope/vim-sensible' 			"required
-Plug 'preservim/nerdtree'			"filetree
-Plug 'vim-syntastic/syntastic'		"auto grammar check
-Plug 'preservim/nerdcommenter'		"comment
-Plug 'nathanaelkane/vim-indent-guides'	"
-Plug 'vim-airline/vim-airline'		"fancy status bar
-Plug 'airblade/vim-gitgutter'			"see code changes
-Plug 'nanotech/jellybeans.vim'
-Plug 'kien/ctrlp.vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'Raimond/delimitMate'
-Plug 'terryma/vim-smooth-scroll'
-Plug 'zxqfl/tabnine-vim'
-call plug#end()
-
 set nocompatible
 set number
 set cindent
@@ -27,6 +9,26 @@ set shiftwidth=4
 set mouse=a
 set cursorline
 filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim' 			"required
+Plugin 'tpope/vim-fugitive' 			"use git things in vim
+Plugin 'tpope/vim-sensible' 			"required
+Plugin 'preservim/nerdtree'			"filetree
+Plugin 'vim-syntastic/syntastic'		"auto grammar check
+Plugin 'preservim/nerdcommenter'		"comment
+Plugin 'nathanaelkane/vim-indent-guides'	"
+Plugin 'vim-airline/vim-airline'		"fancy status bar
+Plugin 'airblade/vim-gitgutter'			"see code changes
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Raimond/delimitMate'
+Plugin 'terryma/vim-smooth-scroll'
+Plugin 'zxqfl/tabnine-vim'
+call vundle#end()
 
 color jellybeans
 

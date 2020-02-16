@@ -14,31 +14,19 @@ By this time, I would like to set standards for VIM.
 ***
 ## 1. How to patch .vimrc
 ### 1-0. Run auto-script.sh
-#### There is 'auto-script.sh' file. You can do rest of things in simple way.
-#### You can just download 'auto-script.sh' and run it by double click
+#### There is 'auto-script.sh' file. Download it
+#### You can run it by double click
 #### or
-For Mac OS
 ```bash
-$ curl https://raw.githubusercontent.com/LeeSH825/vim_configs/master/auto-script.sh
-$ ./auto-script.sh
-```
-For Linux
-```bash
-$ wget https://raw.githubusercontent.com/LeeSH825/vim_configs/master/auto-script.sh
-$ ./auto-script.sh
+./auto-script.sh
 ```
 #### Then rest of 1-1~3 will finish.
 
-### 1-1. Install vim-plug
-For Mac OS
+### 1-1. Install Vundle
 ```bash
-$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
-For Linux
-```bash
-$ mkdir -p ~/.vim/autoload
-$ wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -o ~/.vim/autoload/plug.vim
-```
+
 ### 1-2. Download .vimrc file
 For Mac OS
 ```bash
@@ -54,10 +42,7 @@ $ vim -c "source %" -c "PluginInstall" -c "q" -c "q"
 ```
 or you can just use 
 ```
-:source %
-:PluginInstall
-:q!
-:q!
+:source % , :PluginInstall , :q! , :q!
 ```
 ***
 ## 2. Plugins
