@@ -27,8 +27,6 @@ set mouse=a
 set cursorline
 filetype off
 
-color jellybeans
-
 "for syntastic tool
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
