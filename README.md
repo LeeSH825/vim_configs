@@ -1,9 +1,15 @@
 # vim_configs Guide lines
 ## 0. Preface 
-### 0-1. notations
-#### 0-1.1. $
+### 0-1. Purpose
+There are some needs of using VIM while participating '42Seoul'.
+Since all systems in '42Seoul' are in environment of 'Mac OS', some kind of standard should be established.
+I don't know which thing I can do at '42Seoul', but using VIM as IDE must be helpful.
+By this time, I would like to set standards for VIM.
+
+### 0-2. notations
+#### 0-2.1. $
 * commands at the bash shell
-#### 0-1.2. :
+#### 0-2.2. :
 * commands at the VIM shell
 ***
 ## 1. How to patch .vimrc
@@ -27,7 +33,7 @@ $ vim -c "source %" -c "PluginInstall" -c "q" -c "q"
 ```
 or you can just use 
 ```
-:source , :PluginInstall , :q! , :q!
+:source % , :PluginInstall , :q! , :q!
 ```
 ***
 ## 2. Plugins
@@ -55,17 +61,13 @@ or you can just use
 * helping to comment more easily
 - *More Informations on https://github.com/preservim/nerdcommenter*
 
-### ~~2-7. Shougo/neocomplcache.vim~~
-* Currently not working.
-* ~~auto-complete framework~~
-* ~~I use neocomplcache instead of neocomplete, since VIM in Catalina(Mac OS 10.15.3) doesn't enable LUA, which is requirement of neocomplete~~
-* ~~You are good to use neocomplete if ':echo has("lua")' returns '1'~~
-- ~~*More Informations on https://github.com/Shougo/neocomplcache.vim*~~
+### 2-7 zxqfl/tabnine-vim
+* Auto-complete framework
+- *More Informations on https://tabnine.com/semantic*
 
 ### ~~2-8. nathanaelkane/vim-indent-guides~~
-* Currently not working.
-* ~~displaying indent levels visually~~
-- ~~*More Informations on https://github.com/nathanaelkane/vim-indent-guides*~~
+* displaying indent levels visually
+- *More Informations on https://github.com/nathanaelkane/vim-indent-guides*
 
 ### 2-9. vim-airline/vim-airline
 * More informations on status bar
@@ -82,6 +84,18 @@ or you can just use
 ### 2-12 kien/ctrlp.vim
 * helping to open files more easily, and more quickly
 - *More Informations on https://github.com/kien/ctrlp.vim*
+
+### 2-13 terryma/vim-multiple-cursors
+* enable to select multiple things
+- *More Informations on https://github.com/terryma/vim-multiple-cursors*
+
+### 2-14 Raimondi/delimitMate
+* auto-completion for quotes, parens, brackets, etc
+- *More Informations on https://github.com/Raimondi/delimitMate*
+
+### 2-15 terryma/vim-smooth-scroll
+* Make scrolling in VIM more pleasant
+- *More Informations on https://github.com/terryma/vim-smooth-scroll*
 ***
 ## 3. Vim local settings
 ### 3-1. set nocompatible
@@ -108,7 +122,7 @@ or you can just use
 ### 3-8. set shiftwidth=4
 * set shift key to "4" space
 
-### 3-9. set mouse-=a
+### 3-9. set mouse=a
 * enable using mouse
 
 ### 3-10. set cursorline
