@@ -13,6 +13,15 @@ By this time, I would like to set standards for VIM.
 * commands at the VIM shell
 ***
 ## 1. How to patch .vimrc
+### 1-0. Run auto-script.sh
+#### There is 'auto-script.sh' file. Download it
+#### You can run it by double click
+#### or
+```bash
+./auto-script.sh
+```
+#### Then rest of 1-1~3 will finish.
+
 ### 1-1. Install Vundle
 ```bash
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
