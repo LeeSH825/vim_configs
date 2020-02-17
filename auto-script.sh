@@ -36,14 +36,8 @@ function install_plugins(){
 
 #Program starts from here
 if [ -e ~/.vimrc ]; then
-	echo -n ".vimrc file already exists. Do you want to overwrite?[Y/n]:"
-	tty_state=$(stty -g)
-	stty raw
-	char=$(dd bs=1 count=1 2> dev/null)
-	stty "$tty_state"
-
-	echo
-
+	echo ".vimrc file already exists. Do you want to overwrite?[Y/n]:"
+	read char
 	case "$char" in
 		[yY])
 		install_plugins
