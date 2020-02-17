@@ -30,19 +30,6 @@ function install_plugins(){
 	export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 	gem install --user --pr norminette
 
-	echo "Do you want to set alias gcc -Werror -Wall -Wextra to cc ?[Y/n]:"
-	read cc
-	case "$cc" in
-		[yY])
-		alias cc='gcc -Wall -Wextra -Werror'
-		;;
-		[nN])
-		;;
-		*)
-		echo "wrong command"
-		;;
-	esac
-
 	echo "Do you want to delete useless files?[Y/n]:"
 	read del
 	case "$del" in
@@ -51,11 +38,9 @@ function install_plugins(){
 		cd ..
 		;;
 		[nN])
-		exit 1
 		;;
 		*)
 		echo "wrong command"
-		exit 1
 		;;
 	esac
 }
@@ -71,11 +56,23 @@ if [ -e ~/.vimrc ]; then
 		install_plugins
 		;;
 		[nN])
-		exit 1
 		;;
 		*)
 		echo "wrong command"
-		exit 1
 		;;
 	esac
+
+	echo "Do you want to set alias gcc -Werror -Wall -Wextra to cc ?[Y/n]:"
+	read cc
+	case "$cc" in
+		[yY])
+		alias cc='gcc -Wall -Wextra -Werror'
+		;;
+		[nN])
+		;;
+		*)
+		echo "wrong command"
+		;;
+	esac
+	exit 0
 fi
