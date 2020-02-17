@@ -63,7 +63,7 @@ $ wget https://gist.githubusercontent.com/SuperSpyTX/887922786834aa8e1914cfb0ee0
 For Linux
 ```bash
 $ wget https://gist.githubusercontent.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177/raw/2849086f56cea73c60283496e9386a5bef0ff636/norminette.vim -o ~/.vim/plugged/ale/ale_linters/c/norminette.vim
-'''
+```
 #### 1-4.2. Install Norminette
 ```bash
 $ export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
