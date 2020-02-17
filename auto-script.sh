@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function install_norm(){
-	if [ $1 -n ]; then
+	if [ -n $1 ]; then
 		#for Mac OS
 		curl -s https://gist.githubusercontent.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177/raw/2849086f56cea73c60283496e9386a5bef0ff636/norminette.vim -o ~/.vim/plugged/ale/ale_linters/c/norminette.vim
 	else
@@ -12,9 +12,9 @@ function install_norm(){
 
 function install_plugins(){
 	isMac=`uname -a | grep -o Mac`
-	if [ $isMac -n ]; then
+	if [ -n $isMac ]; then
 		#for Mac OS
-		curl -fLos ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 		curl -s https://raw.githubusercontent.com/LeeSH825/vim_configs/master/.vimrc -o ~/.vimrc
 	else
 		#for Linux

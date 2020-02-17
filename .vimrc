@@ -14,7 +14,7 @@ Plug 'Raimondi/delimitMate'				"auto bracket
 Plug 'terryma/vim-smooth-scroll'		"smooth scroll
 Plug 'zxqfl/tabnine-vim'				"auto complete
 Plug 'tpope/vim-surround'				"smart quotes
-Plug 'pbonder/vim-42header'				"42header
+Plug 'pbondoer/vim-42header'				"42header
 call plug#end()
 
 set nocompatible
