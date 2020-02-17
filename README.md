@@ -5,7 +5,7 @@
 ###### Since all systems in '42Seoul' are in environment of 'Mac OS', some kind of standard should be established.
 ###### I don't know which thing I can do at '42Seoul', but using VIM as IDE must be helpful.
 ###### By this time, I would like to set standards for VIM8.
-*This configuration file is fo VIM8*
+*This configuration file is for VIM8*
 ### 0-2. Notations
 #### 0-2.1. '$'
 * commands at the bash shell
@@ -63,7 +63,7 @@ $ vim
 #### 1-4.1. Download Norminette.vim
 For Mac OS
 ```bash
-$ wget https://gist.githubusercontent.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177/raw/2849086f56cea73c60283496e9386a5bef0ff636/norminette.vim -o ~/.vim/plugged/ale/ale_linters/c/norminette.vim
+$ curl https://gist.githubusercontent.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177/raw/2849086f56cea73c60283496e9386a5bef0ff636/norminette.vim -o ~/.vim/plugged/ale/ale_linters/c/norminette.vim
 ```
 For Linux
 ```bash

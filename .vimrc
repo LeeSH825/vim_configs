@@ -30,7 +30,6 @@ filetype off
 
 "for syntastic tool
 let g:ale_sign_column_always = 1
-let g:ale_linters = {'c': ['clang', 'norminette']}
 
 "for indent guide
 let g:indent_guides_enable_on_vim_startup = 1
