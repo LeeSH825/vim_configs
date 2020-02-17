@@ -149,9 +149,9 @@ $ alias cc='gcc -Werror -Wall -Wextra '
 * Manage brackets or quotes more easily
 - *More Informations on https://github.com/tpope/vim-surround*
 
-### 2-16. pbonder/vim-42header
+### 2-16. pbondoer/vim-42header
 * VIM header for 42projects
-- *More Informations on https://github.com/pbonder/vim-header*
+- *More Informations on https://github.com/pbondoer/vim-42header*
 ***
 ## 3. VIM local settings
 ### 3-1. set nocompatible
