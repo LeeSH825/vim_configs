@@ -37,11 +37,11 @@ $ wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -o ~/
 ### 1-2. Download .vimrc file
 For Mac OS
 ```bash
-$ curl https://raw.githubusercontent.com/LeeSH825/vim-_configs/master/.vimrc -o ~/.vimrc
+$ curl https://raw.githubusercontent.com/LeeSH825/vim_configs/master/.vimrc -o ~/.vimrc
 ```
 For Linux
 ```bash
-$ wget https://raw.githubusercontent.com/LeeSH825/vim-_configs/master/.vimrc -o ~/.vimrc
+$ wget https://raw.githubusercontent.com/LeeSH825/vim_configs/master/.vimrc -o ~/.vimrc
 ```
 ### 1-3. Install Plugins
 ```bash
@@ -54,6 +54,26 @@ $ vim
 :q!
 :q!
 ```
+### 1-4. Install Norminette for ALE
+#### 1-4.1. Download Norminette.vim
+For Mac OS
+```bash
+$ wget https://gist.githubusercontent.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177/raw/2849086f56cea73c60283496e9386a5bef0ff636/norminette.vim -o ~/.vim/plugged/ale/ale_linters/c/norminette.vim
+```
+For Linux
+```bash
+$ wget https://gist.githubusercontent.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177/raw/2849086f56cea73c60283496e9386a5bef0ff636/norminette.vim -o ~/.vim/plugged/ale/ale_linters/c/norminette.vim
+'''
+#### 1-4.2. Install Norminette
+```bash
+$ export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+$ gem install --user --pr norminette
+```
+### 1-5. Set color theme
+```
+$ echo color jellybeans >> ~/.vimrc
+```
+
 ***
 ## 2. Plugins
 ### 2-1. tpope/vim-fugitive
@@ -71,6 +91,10 @@ $ vim
 ### 2-4. dense-analysis/ale
 * Syntax checker
 - *More Informations on https://github.com/dense-analysis/ale*
+
+#### 2.4-1. Norminette Linter for ALE
+* Help you to code within norminette
+- *More Informations on https://github.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177#norminette-linter-for-ale-asynchronous-linting-engine*
 
 ### 2-5. preservim/nerdcommenter
 * Helping to comment more easily
