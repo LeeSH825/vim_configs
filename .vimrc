@@ -8,7 +8,8 @@ Plug 'nathanaelkane/vim-indent-guides'	"auto-indent
 Plug 'vim-airline/vim-airline'			"fancy status bar
 Plug 'airblade/vim-gitgutter'			"see code changes
 Plug 'nanotech/jellybeans.vim'			"color theme
-Plug 'junegunn/fzf.vim'					"file manager
+"Plug 'junegunn/fzf.vim'				"file manager
+Plug 'ctrlpvim/ctrlp.vim'				"file manager
 Plug 'terryma/vim-multiple-cursors'		"multiple selection
 Plug 'Raimondi/delimitMate'				"auto bracket
 Plug 'terryma/vim-smooth-scroll'		"smooth scroll

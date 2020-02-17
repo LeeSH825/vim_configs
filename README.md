@@ -128,9 +128,10 @@ $ alias cc='gcc -Werror -Wall -Wextra '
 * Color theme "jellybeans"
 - *More Informations on https://github.com/nanotech/jellybeans.vim*
 
-### 2-11. junegunn/fzf.vim
+### 2-11. ctrlpvim/ctrlp.vim
 * Help to open files more easily, and more quickly
-- *More Informations on https://github.com/junegunn/fzf.vim*
+* (Changed from fzf to ctrlp for integration problem with vim-airline)
+- *More Informations on https://github.com/ctrlpvim/ctrlp.vim*
 
 ### 2-12. terryma/vim-multiple-cursors
 * Enable to select multiple things
