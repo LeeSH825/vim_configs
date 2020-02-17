@@ -4,8 +4,8 @@
 ###### There are some needs of using VIM while participating '42Seoul'.
 ###### Since all systems in '42Seoul' are in environment of 'Mac OS', some kind of standard should be established.
 ###### I don't know which thing I can do at '42Seoul', but using VIM as IDE must be helpful.
-###### By this time, I would like to set standards for VIM.
-
+###### By this time, I would like to set standards for VIM8.
+*This configuration file is fo VIM8*
 ### 0-2. Notations
 #### 0-2.1. '$'
 * commands at the bash shell
@@ -183,3 +183,7 @@ $ echo color jellybeans >> ~/.vimrc
 * If you are willing to customize this .vimrc file, you have to refer bash style coding guide
 * You might refer guide from here : https://lug.fh-swf.de/vim/vim-bash/StyleGuideShell.en.pdf
 * Don't forget ':PlugClean' whenever you have changes in Plugins
+***
+## 5. Feedback
+* You can contact me with fleming@kakao.com
+

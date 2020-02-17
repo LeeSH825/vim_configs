@@ -64,4 +64,3 @@ if [ -e ~/.vimrc ]; then
 		;;
 	esac
 fi
-install_plugins
