@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function install_norm(){
 	if [ $1 -n ]; then
