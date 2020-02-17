@@ -11,7 +11,7 @@ function install_norm(){
 }
 
 function install_plugins(){
-	isMac=`uname -a | grep Mac`
+	isMac=`uname -a | grep -o Mac`
 	if [ $isMac -n ]; then
 		#for Mac OS
 		curl -fLos ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -34,7 +34,7 @@ function install_plugins(){
 	read cc
 	case "$cc" in
 		[yY])
-		alias cc='gcc -Wall -Wextra -Werror '
+		alias cc='gcc -Wall -Wextra -Werror'
 		;;
 		[nN])
 		;;
@@ -66,6 +66,8 @@ if [ -e ~/.vimrc ]; then
 	read over
 	case "$over" in
 		[yY])
+		rm ~/.vimrc
+		rm -rf ~/.vim
 		install_plugins
 		;;
 		[nN])
