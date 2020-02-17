@@ -1,11 +1,11 @@
-# vim_configs Guide lines
+# vim_configs Guideline
 ## 0. Preface 
 ### 0-1. Purpose
 ###### There are some needs of using VIM while participating '42Seoul'.
 ###### Since all systems in '42Seoul' are in environment of 'Mac OS', some kind of standard should be established.
 ###### I don't know which thing I can do at '42Seoul', but using VIM as IDE must be helpful.
 ###### By this time, I would like to set standards for VIM8.
-*This configuration file is for VIM8*
+##### This configuration file is for **VIM8(especially for pre-installed VIM at Mac OS)**
 ### 0-2. Notations
 #### 0-2.1. '$'
 * commands at the bash shell
@@ -20,7 +20,7 @@ $ rm -rf .vimrc ~/.vim
 ## 1. How to patch .vimrc
 ### 1-0. If you don't want to disturb yourself
 #### There is 'auto-script.sh' file. You can do rest of things in simple way.
-#### You can just download 'auto-script.sh' and run it by double click
+#### You can just download ['auto-script.sh'](https://raw.githubusercontent.com/LeeSH825/vim_configs/master/auto-script.sh) and run it by double click
 ###### (If you have some trouble with running it, you can do $ chmod 755 auto-script.sh)
 #### or
 ```bash
