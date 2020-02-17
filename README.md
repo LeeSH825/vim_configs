@@ -21,7 +21,7 @@ $ rm -rf .vimrc ~/.vim
 ### 1-0. If you don't want to disturb yourself
 #### There is 'auto-script.sh' file. You can do rest of things in simple way.
 #### You can just download 'auto-script.sh' and run it by double click
-###### (If you have some trouble with running it, you can do $ chmod 644 auto-script.sh)
+###### (If you have some trouble with running it, you can do $ chmod 755 auto-script.sh)
 #### or
 ```bash
 $ git clone https://github.com/LeeSH825/vim_configs.git
@@ -75,10 +75,13 @@ $ export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 $ gem install --user --pr norminette
 ```
 ### 1-5. Set color theme
-```
+```bash
 $ echo color jellybeans >> ~/.vimrc
 ```
-
+### 1-6. Set alias for convenience
+```bash
+$ alias cc='gcc -Werror -Wall -Wextra '
+```
 ***
 ## 2. Plugins
 ### 2-1. tpope/vim-fugitive
@@ -99,10 +102,10 @@ $ echo color jellybeans >> ~/.vimrc
 
 #### 2.4-1. Norminette Linter for ALE
 * Help you to code within norminette
-- *More Informations on https://github.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177#norminette-linter-for-ale-asynchronous-linting-engine*
+- *More Informations on https://gist.github.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177*
 
 ### 2-5. preservim/nerdcommenter
-* Helping to comment more easily
+* Help to comment more easily
 - *More Informations on https://github.com/preservim/nerdcommenter*
 
 ### 2-6 zxqfl/tabnine-im
@@ -110,7 +113,7 @@ $ echo color jellybeans >> ~/.vimrc
 - *More Informations on https://tabnine.com/semantic*
 
 ### 2-7. nathanaelkane/vim-indent-guides
-* Displaying indent levels visually
+* Display indent levels visually
 - *More Informations on https://github.com/nathanaelkane/vim-indent-guides*
 
 ### 2-8. vim-airline/vim-airline
@@ -118,7 +121,7 @@ $ echo color jellybeans >> ~/.vimrc
 - *More Informations on https://github.com/vim-airline/vim-airline*
 
 ### 2-9. airblade/vim-gitgutter
-* Indicating changed lines for GIT things
+* Indicate changed lines for GIT things
 - *More Informations on https://github.com/airblade/vim-gitgutter*
 
 ### 2-10. nanotech/jellybeans.vim
@@ -126,7 +129,7 @@ $ echo color jellybeans >> ~/.vimrc
 - *More Informations on https://github.com/nanotech/jellybeans.vim*
 
 ### 2-11. junegunn/fzf.vim
-* Helping to open files more easily, and more quickly
+* Help to open files more easily, and more quickly
 - *More Informations on https://github.com/junegunn/fzf.vim*
 
 ### 2-12. terryma/vim-multiple-cursors
@@ -144,11 +147,12 @@ $ echo color jellybeans >> ~/.vimrc
 ### 2-15. tpope/vim-surround
 * Manage brackets or quotes more easily
 - *More Informations on https://github.com/tpope/vim-surround*
+
 ### 2-16. pbonder/vim-42header
-* vim header for 42projects
+* VIM header for 42projects
 - *More Informations on https://github.com/pbonder/vim-header*
 ***
-## 3. Vim local settings
+## 3. VIM local settings
 ### 3-1. set nocompatible
 * enable to move cursors with arrow keys
 
@@ -189,4 +193,3 @@ $ echo color jellybeans >> ~/.vimrc
 ***
 ## 5. Feedback
 * You can contact me with fleming@kakao.com
-

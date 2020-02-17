@@ -1,20 +1,20 @@
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-fugitive' 			"use git things in vim
-Plug 'tpope/vim-sensible' 			"required
-Plug 'preservim/nerdtree'			"filetree
-Plug 'dense-analysis/ale'
-Plug 'preservim/nerdcommenter'		"comment
-Plug 'nathanaelkane/vim-indent-guides'	"
-Plug 'vim-airline/vim-airline'		"fancy status bar
+Plug 'tpope/vim-fugitive' 				"use git things in vim
+Plug 'tpope/vim-sensible' 				"required
+Plug 'preservim/nerdtree'				"filetree
+Plug 'dense-analysis/ale'				"syntax check
+Plug 'preservim/nerdcommenter'			"comment
+Plug 'nathanaelkane/vim-indent-guides'	"auto-indent
+Plug 'vim-airline/vim-airline'			"fancy status bar
 Plug 'airblade/vim-gitgutter'			"see code changes
-Plug 'nanotech/jellybeans.vim'
-Plug 'junegunn/fzf.vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'Raimondi/delimitMate'
-Plug 'terryma/vim-smooth-scroll'
-Plug 'zxqfl/tabnine-vim'
-Plug 'tpope/vim-surround'
-Plug 'pbonder/vim-42header'
+Plug 'nanotech/jellybeans.vim'			"color theme
+Plug 'junegunn/fzf.vim'					"file manager
+Plug 'terryma/vim-multiple-cursors'		"multiple selection
+Plug 'Raimondi/delimitMate'				"auto bracket
+Plug 'terryma/vim-smooth-scroll'		"smooth scroll
+Plug 'zxqfl/tabnine-vim'				"auto complete
+Plug 'tpope/vim-surround'				"smart quotes
+Plug 'pbonder/vim-42header'				"42header
 call plug#end()
 
 set nocompatible
@@ -31,7 +31,7 @@ filetype off
 
 "for nerd-tree
 "autocmd vimenter * NERDTree 		"automatically start
-map <C-d> :NERDTreeToggle<CR>		"open NERDTree with ctrl+d
+"map <C-d> :NERDTreeToggle<CR>		"open NERDTree with ctrl+d
 
 "for nerd-commenter
 let g:NERDSpaceDelims = 1				" Add spaces after comment delimiters by default
@@ -42,7 +42,7 @@ let g:NERDTrimTrailingWhitespace = 1	" Enable trimming of trailing whitespace wh
 "for syntastic tool
 let g:ale_sign_column_always = 1
 
-"for indent guide
+"for vim-indent-guide
 let g:indent_guides_enable_on_vim_startup = 1
 
 filetype plugin indent on " Put your non-Plugin stuff after this line
