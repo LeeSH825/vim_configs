@@ -11,6 +11,11 @@
 * commands at the bash shell
 #### 0-2.2. ':'
 * commands at the VIM shell
+### 0-3. How to return to normal VIM
+##### You can get normal VIM by removing .vimrc, ~/.vim
+```bash
+$ rm -rf .vimrc ~/.vim
+```
 ***
 ## 1. How to patch .vimrc
 ### 1-0. If you don't want to disturb yourself
