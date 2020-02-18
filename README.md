@@ -1,11 +1,11 @@
 # vim_configs Guideline
 ## 0. Preface 
 ### 0-1. Purpose
+#### This configuration file is for **VIM8(especially for pre-installed VIM at Mac OS)**
 ###### There are some needs of using VIM while participating '42Seoul'.
-###### Since all systems in '42Seoul' are in environment of 'Mac OS', some kind of standard should be established.
-###### I don't know which thing I can do at '42Seoul', but using VIM as IDE must be helpful.
-###### By this time, I would like to set standards for VIM8.
-##### This configuration file is for **VIM8(especially for pre-installed VIM at Mac OS)**
+###### Since all systems in 42Seoul are in environment of 'Mac OS', some kind of standard should be established.
+###### I don't know which thing I can do at 42Seoul, but using VIM as IDE must be helpful.
+###### By this time, I would like to set standards for VIM.
 ### 0-2. Notations
 #### 0-2.1. '$'
 * commands at the bash shell
@@ -20,12 +20,13 @@ $ rm -rf .vimrc ~/.vim
 ## 1. How to patch .vimrc
 ### 1-0. If you don't want to disturb yourself
 #### There is 'auto-script.sh' file. You can do rest of things in simple way.
-#### You can just download <a href="https://raw.githubusercontent.com/LeeSH825/vim_configs/master/auto-script.sh" download="auto-script.sh">auto-script.sh</a> and run it by double click
+#### You can just download <a href="https://raw.githubusercontent.com/LeeSH825/vim_configs/master/auto-script.sh" download="auto-script.sh">auto-script.sh</a> and run it at terminal.
 ###### (If you have some trouble with running it, you can do $ chmod 755 auto-script.sh)
-#### or
+#### or (You would better use this method)
 ```bash
 $ git clone https://github.com/LeeSH825/vim_configs.git
 $ ./vim_configs/auto-script.sh
+$ source ~/.bash_profile
 ```
 ##### Then rest of 1-1~3 will finish.
 
@@ -80,7 +81,7 @@ $ echo color jellybeans >> ~/.vimrc
 ```
 ### 1-6. Set alias for convenience
 ```bash
-$ alias cc='gcc -Werror -Wall -Wextra '
+$ alias cc='gcc -Werror -Wall -Wextra'
 ```
 ***
 ## 2. Plugins
@@ -189,7 +190,7 @@ $ alias cc='gcc -Werror -Wall -Wextra '
 ***
 ## 4. Customization
 * If you are willing to customize this .vimrc file, you have to refer bash style coding guide
-* You might refer guide from here : https://lug.fh-swf.de/vim/vim-bash/StyleGuideShell.en.pdf
+* You might refer guide from here : <https://lug.fh-swf.de/vim/vim-bash/StyleGuideShell.en.pdf>
 * Don't forget ':PlugClean' whenever you have changes in Plugins
 ***
 ## 5. Feedback
