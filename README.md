@@ -20,7 +20,7 @@ $ rm -rf .vimrc ~/.vim
 ## 1. How to patch .vimrc
 ### 1-0. If you don't want to disturb yourself
 #### There is 'auto-script.sh' file. You can do rest of things in simple way.
-#### You can just download ['auto-script.sh'](https://raw.githubusercontent.com/LeeSH825/vim_configs/master/auto-script.sh) and run it by double click
+#### You can just download <a href="https://raw.githubusercontent.com/LeeSH825/vim_configs/master/auto-script.sh" download>auto-script.sh</a> and run it by double click
 ###### (If you have some trouble with running it, you can do $ chmod 755 auto-script.sh)
 #### or
 ```bash

@@ -66,7 +66,9 @@ if [ -e ~/.vimrc ]; then
 	read cc
 	case "$cc" in
 		[yY])
-		alias cc='gcc -Wall -Wextra -Werror'
+		shopt -s expand_aliases
+		echo alias cc='gcc -Wall -Wextra -Werror' >> ~/.bash_profile
+		source ~/.bash_profile
 		;;
 		[nN])
 		;;
