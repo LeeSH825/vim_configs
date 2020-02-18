@@ -28,7 +28,7 @@ $ git clone https://github.com/LeeSH825/vim_configs.git
 $ ./vim_configs/auto-script.sh
 $ source ~/.bash_profile
 ```
-##### Then rest of 1-1~3 will finish.
+##### Then rest of 1-1~6 will finish.
 
 ### 1-1. Install vim-plug
 For Mac OS
