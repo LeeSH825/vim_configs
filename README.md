@@ -187,6 +187,9 @@ $ alias cc='gcc -Werror -Wall -Wextra'
 
 ### 3-11. color jellybeans
 * set color theme to "jellybeans"
+
+### 3-12. nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar> :let @/=_s<Bar><CR>
+* remove all trailing whitespace by pressing F5
 ***
 ## 4. Customization
 * If you are willing to customize this .vimrc file, you have to refer bash style coding guide

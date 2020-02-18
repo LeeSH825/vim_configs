@@ -30,6 +30,8 @@ set mouse=a
 set cursorline
 filetype off
 
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar> :let @/=_s<Bar><CR>
+
 "for nerd-tree
 "autocmd vimenter * NERDTree 		"automatically start
 "map <C-d> :NERDTreeToggle<CR>		"open NERDTree with ctrl+d
