@@ -23,19 +23,24 @@ function install_plugins(){
 		wget -q https://raw.githubusercontent.com/LeeSH825/vim_configs/master/.vimrc -o ~/.vimrc
 	fi
 
-	vim -c "PlugInstall" -c "q" -c "q"
+	vim -c "PlugInstall" -c "q" -c "q" 2>/dev/null
 	echo color jellybeans >> ~/.vimrc
 
 	install_norm $isMac
 	export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 	gem install --user --pr norminette
 
+	isRuby=`gem --version`
+	if [ -z $isRuby ]; then
+		#Ruby not installed
+		echo "Ruby is not installed in your System"
+		exit 1
+	fi
 	echo "Do you want to delete useless files?[Y/n]:"
 	read del
 	case "$del" in
 		[yY])
 		rm -rf ../vim_configs
-		cd ..
 		;;
 		[nN])
 		;;
@@ -51,6 +56,8 @@ if [ -e ~/.vimrc ]; then
 	read over
 	case "$over" in
 		[yY])
+		cp ~/.vimrc ~/.vimrc.backup
+		cp -r ~/.vim_backup
 		rm ~/.vimrc
 		rm -rf ~/.vim
 		install_plugins
