@@ -10,7 +10,7 @@ case "$re" in
 		mv ~/.vimrc.backup ~/.vimrc
 	fi
 	if [ -d ~/.vim_backup ]; then
-		mv -r ~/.vim_backup ~/.vim
+		mv ~/.vim_backup ~/.vim
 	fi
 	exit 0
 	;;

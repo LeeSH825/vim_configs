@@ -1,6 +1,13 @@
 #!/bin/bash
 
 function install_norm(){
+	isRuby=`gem --version`
+	if [ -z $isRuby ]; then
+		#Ruby not installed
+		echo "Ruby is not installed in your System"
+		exit 1
+	fi
+
 	if [ -n $1 ]; then
 		#for Mac OS
 		curl -s https://gist.githubusercontent.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177/raw/2849086f56cea73c60283496e9386a5bef0ff636/norminette.vim -o ~/.vim/plugged/ale/ale_linters/c/norminette.vim
@@ -30,12 +37,6 @@ function install_plugins(){
 	export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 	gem install --user --pr norminette
 
-	isRuby=`gem --version`
-	if [ -z $isRuby ]; then
-		#Ruby not installed
-		echo "Ruby is not installed in your System"
-		exit 1
-	fi
 	echo "Do you want to delete useless files?[Y/n]:"
 	read del
 	case "$del" in

@@ -11,13 +11,21 @@
 * commands at the bash shell
 #### 0-2.2. ':'
 * commands at the VIM shell
-### 0-3. How to return to normal VIM
-##### You can get normal VIM by removing .vimrc, ~/.vim
+### 0-3. How to return to previous VIM configuration (original or modified one)
+##### You can just download <a href="https//raw.githubusercontent.com/LeeSH825/vim_configs/master/restore.sh" download="restore.sh">restore.sh</a> and run it at terminal.
+###### (If you have some trouble with running it, you can do $ chmod 755 restore.sh)
 ```bash
-$ rm -rf .vimrc ~/.vim
+$ ./restore.sh
+```
+##### Or you can get normal VIM by removing .vimrc, ~/.vim and replace it by previous configuration files.
+##### (When you've patched configuration by auto-script.sh, there are .vimrc.backup and /.vim_backup)
+```bash
+$ rm -rf ~/.vimrc ~/.vim
+$ mv ~/.vimrc.backup ~/.vimrc
+$ mv ~/.vim_backup ~/.vim
 ```
 ***
-## 1. How to patch .vimrc
+## 1. How to patch VIM configuration file
 ### 1-0. If you don't want to disturb yourself
 #### There is 'auto-script.sh' file. You can do rest of things in simple way.
 #### You can just download <a href="https://raw.githubusercontent.com/LeeSH825/vim_configs/master/auto-script.sh" download="auto-script.sh">auto-script.sh</a> and run it at terminal.
@@ -153,6 +161,28 @@ $ alias cc='gcc -Werror -Wall -Wextra'
 ### 2-16. pbondoer/vim-42header
 * VIM header for 42projects
 - *More Informations on https://github.com/pbondoer/vim-42header*
+
+### 2-17. easymotion/vim-easymotion
+* Easy to move cursor
+- * More Informations on https://github.com/easymotion/vim-easymotion*
+
+### 2-18. edkolev/promptline.vim
+* Make shell within VIM
+- *More Informations on https://github.com/edkolev/promptline.vim*
+
+### 2-19. xuhdev/SingleCompile
+* Compile within VIM
+* Press F9 to compile, press F10 to run
+- *More informations on https://github.com/xuhdev/SingleCompile*
+
+### 2-20. pangloss/vim-simplefold
+* Fold codes easily
+- *More Informations on https://github.com/pangloss/vim-simplefold*
+
+### 2-21. vim-scripts/WhiteWash
+* Removes white spaces
+* Press ^M to remove all white spaces
+- *More Informations on https://github.com/vim-scripts/WhiteWash*
 ***
 ## 3. VIM local settings
 ### 3-1. set nocompatible
