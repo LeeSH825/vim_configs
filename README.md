@@ -12,13 +12,13 @@
 #### 0-2.2. ':'
 * commands at the VIM shell
 ### 0-3. How to return to previous VIM configuration (original or modified one)
-##### You can just download <a href="https//raw.githubusercontent.com/LeeSH825/vim_configs/master/restore.sh" download="restore.sh">restore.sh</a> and run it at terminal.
+#### You can just download <a href="https//raw.githubusercontent.com/LeeSH825/vim_configs/master/restore.sh" download="restore.sh">restore.sh</a> and run it at terminal.
 ###### (If you have some trouble with running it, you can do $ chmod 755 restore.sh)
 ```bash
 $ ./restore.sh
 ```
-##### Or you can get normal VIM by removing .vimrc, ~/.vim and replace it by previous configuration files.
-##### (When you've patched configuration by auto-script.sh, there are .vimrc.backup and /.vim_backup)
+#### Or you can get normal VIM by removing .vimrc, ~/.vim and replace it by previous configuration files.
+#### (When you've patched configuration by auto-script.sh, there are .vimrc.backup and /.vim_backup)
 ```bash
 $ rm -rf ~/.vimrc ~/.vim
 $ mv ~/.vimrc.backup ~/.vimrc
@@ -164,7 +164,7 @@ $ alias cc='gcc -Werror -Wall -Wextra'
 
 ### 2-17. easymotion/vim-easymotion
 * Easy to move cursor
-- * More Informations on https://github.com/easymotion/vim-easymotion*
+- *More Informations on https://github.com/easymotion/vim-easymotion*
 
 ### 2-18. edkolev/promptline.vim
 * Make shell within VIM
