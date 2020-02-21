@@ -60,11 +60,7 @@ if [ -e ~/.vimrc ]; then
 fi
 
 install_norm $isMac
-
-isAlias=`cat ~/.bash_profile | grep gcc`
-if [ -n $isAlias ]; then
-	echo "Alias already exists:	$isAlias"
-fi
+grep gcc ~/.bash_profile
 echo "Do you want to set alias cc= gcc -Werror -Wall -Wextra ?[y/n]:"
 read ali
 case "$ali" in
