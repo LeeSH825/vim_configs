@@ -4,22 +4,27 @@ function install_norm(){
 	isRuby=`gem --version`
 	if [ -z $isRuby ]; then
 		#Ruby not installed
-		echo "Ruby is not installed in your System"
-		exit 1
-	fi
-
-	if [ -n $1 ]; then
-		#for Mac OS
-		curl -s https://gist.githubusercontent.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177/raw/2849086f56cea73c60283496e9386a5bef0ff636/norminette.vim -o ~/.vim/plugged/ale/ale_linters/c/norminette.vim
+		echo "Ruby is not installed in your system"
 	else
-		#for Linux
-		wget -q https://gist.githubusercontent.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177/raw/2849086f56cea73c60283496e9386a5bef0ff636/norminette.vim -o ~/.vim/plugged/ale/ale_linters/c/norminette.vim
+		if [ -d `ruby -e 'puts Gem.user_dir'`/gems/norminette-1.0.0.rc2.pre.2 ]; then
+			:
+		else
+			#norminette not installed
+			if [ -n $1 ]; then
+				#for Mac OS
+				curl -s https://gist.githubusercontent.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177/raw/2849086f56cea73c60283496e9386a5bef0ff636/norminette.vim -o ~/.vim/plugged/ale/ale_linters/c/norminette.vim
+			else
+				#for Linux
+				wget -q https://gist.githubusercontent.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177/raw/2849086f56cea73c60283496e9386a5bef0ff636/norminette.vim -o ~/.vim/plugged/ale/ale_linters/c/norminette.vim
+			fi
+			export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+			gem install --user --pr norminette
+		fi
 	fi
 }
 
 function install_plugins(){
-	isMac=`uname -a | grep -o Mac`
-	if [ -n $isMac ]; then
+	if [ -n $1 ]; then
 		#for Mac OS
 		curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 		curl -s https://raw.githubusercontent.com/LeeSH825/vim_configs/master/.vimrc -o ~/.vimrc
@@ -32,36 +37,19 @@ function install_plugins(){
 
 	vim -c "PlugInstall" -c "q" -c "q" 2>/dev/null
 	echo color jellybeans >> ~/.vimrc
-
-	install_norm $isMac
-	export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
-	gem install --user --pr norminette
-
-	echo "Do you want to delete useless files?[Y/n]:"
-	read del
-	case "$del" in
-		[yY])
-		rm -rf ../vim_configs
-		;;
-		[nN])
-		;;
-		*)
-		echo "wrong command"
-		;;
-	esac
 }
 
 #Program starts from here
+isMac=`uname -a | grep -o Mac`
 if [ -e ~/.vimrc ]; then
-	echo ".vimrc file already exists. Do you want to overwrite?[Y/n]:"
+	echo ".vimrc file already exists. Do you want to overwrite?[y/n]:"
 	read over
 	case "$over" in
 		[yY])
-		cp ~/.vimrc ~/.vimrc.backup
-		cp -r ~/.vim_backup
-		rm ~/.vimrc
-		rm -rf ~/.vim
-		install_plugins
+		mv ~/.vimrc ~/.vimrc.backup
+		mv ~/.vim ~/.vim_backup
+		echo "Created backup files."
+		install_plugins $isMac
 		;;
 		[nN])
 		;;
@@ -69,20 +57,34 @@ if [ -e ~/.vimrc ]; then
 		echo "wrong command"
 		;;
 	esac
-
-	echo "Do you want to set alias gcc -Werror -Wall -Wextra to cc ?[Y/n]:"
-	read cc
-	case "$cc" in
-		[yY])
-		shopt -s expand_aliases
-		echo alias cc=\'gcc -Wall -Wextra -Werror\' >> ~/.bash_profile
-		source ~/.bash_profile
-		;;
-		[nN])
-		;;
-		*)
-		echo "wrong command"
-		;;
-	esac
-	exit 0
 fi
+
+install_norm $isMac
+
+echo "Do you want to set alias gcc -Werror -Wall -Wextra to cc ?[y/n]:"
+read ali
+case "$ali" in
+	[yY])
+	shopt -s expand_aliases
+	echo alias cc=\'gcc -Wall -Wextra -Werror\' >> ~/.bash_profile
+	;;
+	[nN])
+	;;
+	*)
+	echo "wrong command"
+	;;
+esac
+
+echo "Do you want to delete useless files?[y/n]:"
+read del
+case "$del" in
+	[yY])
+	rm -rf ../vim_configs
+	;;
+	[nN])
+	;;
+	*)
+	echo "wrong command"
+	;;
+esac
+exit 0
