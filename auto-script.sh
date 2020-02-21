@@ -61,7 +61,11 @@ fi
 
 install_norm $isMac
 
-echo "Do you want to set alias gcc -Werror -Wall -Wextra to cc ?[y/n]:"
+isAlias=`cat ~/.bash_profile | grep gcc`
+if [ -n $isAlias ]; then
+	echo "Alias already exists:	$isAlias"
+fi
+echo "Do you want to set alias cc= gcc -Werror -Wall -Wextra ?[y/n]:"
 read ali
 case "$ali" in
 	[yY])
