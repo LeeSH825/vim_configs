@@ -57,6 +57,8 @@ if [ -e ~/.vimrc ]; then
 		echo "wrong command"
 		;;
 	esac
+else
+	install_plugins $isMac
 fi
 
 install_norm $isMac
