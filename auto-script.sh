@@ -58,6 +58,7 @@ if [ -e ~/.vimrc ]; then
 		;;
 	esac
 else
+	echo "Installing .vimrc"
 	install_plugins $isMac
 fi
 
