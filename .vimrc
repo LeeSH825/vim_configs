@@ -68,4 +68,4 @@ nmap <F10> :SCCompileRun<cr>
 "for simplefold
 let g:SimpylFold_docstring_preview=1
 
-filetype plugin indent on " Put your non-Plugin stuff after this line
+filetype plugin indent on 

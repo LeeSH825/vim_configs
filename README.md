@@ -1,16 +1,19 @@
 # vim_configs Guideline
 ## 0. Preface 
+### 0-0. How to Download?
+#### **Go to 1-0. and Follow the instruction!**
 ### 0-1. Purpose
 #### This configuration file is for **VIM8(especially for pre-installed VIM at Mac OS)**
-###### There are some needs of using VIM while participating '42Seoul'.
-###### Since all systems in 42Seoul are in environment of 'Mac OS', some kind of standard should be established.
-###### I don't know which thing I can do at 42Seoul, but using VIM as IDE must be helpful.
-###### By this time, I would like to set standards for VIM.
+###### There are some needs of using VIM while participating '42Seoul'. (So as participator of 42 Educations)
+###### Since all systems in 42Seoul are in environment of 'Mac OS', and it's not convenient for Windows User.
+###### It might be helpful for providing standard VIM configs to 42 participators.
+###### This config does not requires any super-user permission, and works well in 42 environment.
+###### Now, feel free to use VIM in 42Seoul.
 ### 0-2. Notations
 #### 0-2.1. '$'
 * commands at the bash shell
 #### 0-2.2. ':'
-* commands at the VIM shell
+* commands at the VIM command line
 ### 0-3. How to return to previous VIM configuration (original or modified one)
 #### You can just download <a href="https//raw.githubusercontent.com/LeeSH825/vim_configs/master/restore.sh" download="restore.sh">restore.sh</a> and run it at terminal.
 ###### (If you have some trouble with running it, you can do $ chmod 755 restore.sh)
@@ -18,7 +21,7 @@
 $ ./restore.sh
 ```
 #### Or you can get normal VIM by removing .vimrc, ~/.vim and replace it by previous configuration files.
-#### (When you've patched configuration by auto-script.sh, there are .vimrc.backup and /.vim_backup)
+#### (When you've patched configuration by auto-script.sh, there must be .vimrc.backup and /.vim_backup)
 ```bash
 $ rm -rf ~/.vimrc ~/.vim
 $ mv ~/.vimrc.backup ~/.vimrc
@@ -26,7 +29,7 @@ $ mv ~/.vim_backup ~/.vim
 ```
 ***
 ## 1. How to patch VIM configuration file
-### 1-0. If you don't want to disturb yourself
+### 1-0. If you do not want to disturb yourself
 #### There is 'auto-script.sh' file. You can do rest of things in simple way.
 #### You can just download <a href="https://raw.githubusercontent.com/LeeSH825/vim_configs/master/auto-script.sh" download="auto-script.sh">auto-script.sh</a> and run it at terminal.
 ###### (If you have some trouble with running it, you can do $ chmod 755 auto-script.sh)
@@ -34,9 +37,9 @@ $ mv ~/.vim_backup ~/.vim
 ```bash
 $ git clone https://github.com/LeeSH825/vim_configs.git
 $ ./vim_configs/auto-script.sh
-$ source ~/.bash_profile
+$ source ~/.zshrc
 ```
-##### Then rest of 1-1~6 will finish.
+##### Then rest of 1-1~7 will be finished. (You must do source ~/.zshrc to use alias in your current Shell!!)
 
 ### 1-1. Install vim-plug
 For Mac OS
@@ -81,7 +84,7 @@ $ wget https://gist.githubusercontent.com/SuperSpyTX/887922786834aa8e1914cfb0ee0
 #### 1-4.2. Install Norminette
 ```bash
 $ export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
-$ gem install --user --pr norminette
+$ gem install --user --pre norminette
 ```
 ### 1-5. Set color theme
 ```bash
@@ -90,11 +93,17 @@ $ echo color jellybeans >> ~/.vimrc
 ### 1-6. Set alias for convenience
 ```bash
 $ alias cc='gcc -Werror -Wall -Wextra'
+$ alias nm='norminette -R -CheckForbiddenSourceHeader'
+```
+### 1-7. Patch to your current Shell
+```bash
+$ source ~/.zshrc
 ```
 ***
 ## 2. Plugins
 ### 2-1. tpope/vim-fugitive
 * Enable to use git commands in VIM
+* Usage: :Git add , :Git commit
 - *More Informations on https://github.com/tpope/vim-fugitive*
 
 ### 2-2. tpope/vim-sensible
@@ -103,10 +112,11 @@ $ alias cc='gcc -Werror -Wall -Wextra'
 
 ### 2-3. preservim/nerdtree
 * File tree explorer
+* Usage: :NERDtree
 - *More Informations on https://github.com/preservim/nerdtree*
 
 ### 2-4. dense-analysis/ale
-* Syntax checker
+* Syntax checker (Always running)
 - *More Informations on https://github.com/dense-analysis/ale*
 
 #### 2.4-1. Norminette Linter for ALE
@@ -127,6 +137,7 @@ $ alias cc='gcc -Werror -Wall -Wextra'
 
 ### 2-8. vim-airline/vim-airline
 * More informations on status bar
+* Usage: Mode | Git branch | Filename | Filetype | File encoding | Current Position | Warning/Error form PlugIns
 - *More Informations on https://github.com/vim-airline/vim-airline*
 
 ### 2-9. airblade/vim-gitgutter
@@ -140,6 +151,7 @@ $ alias cc='gcc -Werror -Wall -Wextra'
 ### 2-11. ctrlpvim/ctrlp.vim
 * Help to open files more easily, and more quickly
 * (Changed from fzf to ctrlp for integration problem with vim-airline)
+* Usage: Ctrl + p
 - *More Informations on https://github.com/ctrlpvim/ctrlp.vim*
 
 ### 2-12. terryma/vim-multiple-cursors
@@ -156,10 +168,12 @@ $ alias cc='gcc -Werror -Wall -Wextra'
 
 ### 2-15. tpope/vim-surround
 * Manage brackets or quotes more easily
+* Usage: cs'" -> change ' to ", Ctrl+v -> Shift+S+" to wrap with "
 - *More Informations on https://github.com/tpope/vim-surround*
 
 ### 2-16. pbondoer/vim-42header
 * VIM header for 42projects
+* Usage: F1 to set 42header
 - *More Informations on https://github.com/pbondoer/vim-42header*
 
 ### 2-17. easymotion/vim-easymotion
@@ -168,11 +182,12 @@ $ alias cc='gcc -Werror -Wall -Wextra'
 
 ### 2-18. edkolev/promptline.vim
 * Make shell within VIM
+* Usage: :PromptlineSnapshot
 - *More Informations on https://github.com/edkolev/promptline.vim*
 
 ### 2-19. xuhdev/SingleCompile
 * Compile within VIM
-* Press F9 to compile, press F10 to run
+* Usage: Press F9 to compile, Press F10 to run
 - *More informations on https://github.com/xuhdev/SingleCompile*
 
 ### 2-20. pangloss/vim-simplefold

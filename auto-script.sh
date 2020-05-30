@@ -9,27 +9,27 @@ function install_norm(){
 		if [ -d `ruby -e 'puts Gem.user_dir'`/gems/norminette-1.0.0.rc2.pre.2 ]; then
 			:
 		else
-			#norminette not installed
+		#norminette not installed
 			if [ -n $1 ]; then
-				#for Mac OS
+			#for Mac OS
 				curl -s https://gist.githubusercontent.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177/raw/2849086f56cea73c60283496e9386a5bef0ff636/norminette.vim -o ~/.vim/plugged/ale/ale_linters/c/norminette.vim
 			else
-				#for Linux
+			#for Linux
 				wget -q https://gist.githubusercontent.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177/raw/2849086f56cea73c60283496e9386a5bef0ff636/norminette.vim -o ~/.vim/plugged/ale/ale_linters/c/norminette.vim
 			fi
 			export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
-			gem install --user --pr norminette
+			gem install --user --pre norminette
 		fi
 	fi
 }
 
 function install_plugins(){
 	if [ -n $1 ]; then
-		#for Mac OS
+	#for Mac OS
 		curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 		curl -s https://raw.githubusercontent.com/LeeSH825/vim_configs/master/.vimrc -o ~/.vimrc
 	else
-		#for Linux
+	#for Linux
 		mkdir -p ~/.vim/autoload
 		wget -q https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -o ~/.vim/autoload/plug.vim
 		wget -q https://raw.githubusercontent.com/LeeSH825/vim_configs/master/.vimrc -o ~/.vimrc
@@ -39,10 +39,11 @@ function install_plugins(){
 	echo color jellybeans >> ~/.vimrc
 }
 
-#Program starts from here
+#Shell Script starts from here
 isMac=`uname -a | grep -o Mac`
 if [ -e ~/.vimrc ]; then
-	echo ".vimrc file already exists. Do you want to overwrite?[y/n]:"
+	echo ".vimrc file already exists."
+	echo "Do you want to overwrite?(backup file will be stored by .vimrc.backup .vim_backup)[y/n]:"
 	read over
 	case "$over" in
 		[yY])
@@ -63,13 +64,14 @@ else
 fi
 
 install_norm $isMac
-grep gcc ~/.bash_profile
-echo "Do you want to set alias cc= gcc -Werror -Wall -Wextra ?[y/n]:"
-read ali
-case "$ali" in
+
+grep gcc ~/.zsh
+echo "Do you want to set alias cc=gcc -Werror -Wall -Wextra ?[y/n]:"
+read ali1
+case "$ali1" in
 	[yY])
 	shopt -s expand_aliases
-	echo alias cc=\'gcc -Wall -Wextra -Werror\' >> ~/.bash_profile
+	echo alias cc=\'gcc -Wall -Wextra -Werror\' >> ~/.zshrc
 	;;
 	[nN])
 	;;
@@ -77,6 +79,24 @@ case "$ali" in
 	echo "wrong command"
 	;;
 esac
+
+grep norminette ~/.zsh
+echo "Do you want to set alias nm=norminette -R CheckForbiddenSourceHeader ?[y/n]:"
+read ali2
+case "$ali2" in
+	[yY])
+	shopt -s expand_aliases
+	echo alias cc=\'norminette -R CheckForbiddenSourceHeader\' >> ~/.zshrc
+	;;
+	[nN])
+	;;
+	*)
+	echo "wrong command"
+	;;
+esac
+
+echo "You must type \"source ./zshrc\" to use those aliases in current shell.\(just for one time.\)"
+echo "You can see your aliases by typing \"alias\""
 
 echo "Do you want to delete useless files?[y/n]:"
 read del
