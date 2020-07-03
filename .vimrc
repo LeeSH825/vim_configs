@@ -14,7 +14,7 @@ Plug 'ctrlpvim/ctrlp.vim'				"file manager
 Plug 'terryma/vim-multiple-cursors'		"multiple selection
 Plug 'Raimondi/delimitMate'				"auto bracket
 Plug 'terryma/vim-smooth-scroll'		"smooth scroll
-Plug 'zxqfl/tabnine-vim'				"auto complete
+"Plug 'zxqfl/tabnine-vim'				"auto complete
 Plug 'tpope/vim-surround'				"smart quotes
 Plug 'pbondoer/vim-42header'			"42header
 Plug 'easymotion/vim-easymotion'		"easy to deal with words

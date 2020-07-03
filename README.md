@@ -127,9 +127,9 @@ $ source ~/.zshrc
 * Help to comment more easily
 - *More Informations on https://github.com/preservim/nerdcommenter*
 
-### 2-6 zxqfl/tabnine-im
-* Auto-complete framework
-- *More Informations on https://tabnine.com/semantic*
+~~### 2-6 zxqfl/tabnine-im~~
+~~* Auto-complete framework~~
+~~- *More Informations on https://tabnine.com/semantic*~~
 
 ### 2-7. nathanaelkane/vim-indent-guides
 * Display indent levels visually
