@@ -9,7 +9,6 @@
 ##### 따라서, 42서울의 참여자들에게 VIM 설정의 표준을 제공하면 편할 것이라고 생각했습니다.
 ##### 이 설정은 어떠한 슈퍼 유저의 권한도 필요로 하지 않으며, 42 환경에서 잘 작동하는 것이 검증되었습니다.
 ##### 이제, 42서울에서 VIM을 사용하는 것에 두려워하지 마세요.
-
 ### 0-2. 표기
 #### 0-2.1. '$'
 * 쉘에서의 명령어
@@ -28,21 +27,25 @@ $ rm -rf ~/.vimrc ~/.vim
 $ mv ~/.vimrc.backup ~/.vimrc
 $ mv ~/.vim_backup ~/.vim
 ```
+### 0-4. 플러그인 업데이트
+```bash
+:PlugUpdate
+:PlugUpgrade
+```
 ***
-## 1. How to patch VIM configuration file
-### 1-0. If you do not want to disturb yourself
-#### There is 'auto-script.sh' file. You can do rest of things in simple way.
-#### You can just download <a href="https://raw.githubusercontent.com/LeeSH825/vim_configs/master/auto-script.sh" download="auto-script.sh">auto-script.sh</a> and run it at terminal.
-###### (If you have some trouble with running it, you can do $ chmod 755 auto-script.sh)
-#### or (You would better use this method)
+## 1. VIM 설정 파일 패치하기
+### 1-0. 간편한 방법
+#### 'auto-script.sh'파일을 이용하면, 모든 작업들을 한번에 할 수 있습니다.
+#### <a href="https://raw.githubusercontent.com/LeeSH825/vim_configs/master/auto-script.sh" download="auto-script.sh">auto-script.sh</a>를 다운받아서 터미널에서 실행하세요.
+###### (실행하는데 문제가 있다면 $ chmod 755 auto-script.sh 후에 실행해보세요.)
 ```bash
 $ git clone https://github.com/LeeSH825/vim_configs.git
 $ ./vim_configs/auto-script.sh
 $ source ~/.zshrc
 ```
-##### Then rest of 1-1~7 will be finished. (You must do source ~/.zshrc to use alias in your current Shell!!)
+##### 그러면 이제 1-1~7의 과정들이 끝납니다. ($ source ~/.zshrc 를 해줘야 현재 쉘에서 alias들을 사용할 수 있습니다.)
 
-### 1-1. Install vim-plug
+### 1-1. vim-plug 설치하기
 For Mac OS
 ```bash
 $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -52,7 +55,7 @@ For Linux
 $ mkdir -p ~/.vim/autoload
 $ wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -o ~/.vim/autoload/plug.vim
 ```
-### 1-2. Download .vimrc file
+### 1-2. .vimrc 파일 다운로드
 For Mac OS
 ```bash
 $ curl https://raw.githubusercontent.com/LeeSH825/vim_configs/master/.vimrc -o ~/.vimrc
@@ -61,19 +64,19 @@ For Linux
 ```bash
 $ wget https://raw.githubusercontent.com/LeeSH825/vim_configs/master/.vimrc -o ~/.vimrc
 ```
-### 1-3. Install Plugins
+### 1-3. 플러그인 설치
 ```bash
 $ vim -c "PlugInstall" -c "q" -c "q"
 ```
-or you can just use 
+혹은
 ```
 $ vim
 :PlugInstall
 :q!
 :q!
 ```
-### 1-4. Install Norminette for ALE
-#### 1-4.1. Download Norminette.vim
+### 1-4. ALE용 Norminette 설치
+#### 1-4.1. Norminette.vim 다운로드
 For Mac OS
 ```bash
 $ curl https://gist.githubusercontent.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177/raw/2849086f56cea73c60283496e9386a5bef0ff636/norminette.vim -o ~/.vim/plugged/ale/ale_linters/c/norminette.vim
@@ -82,165 +85,168 @@ For Linux
 ```bash
 $ wget https://gist.githubusercontent.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177/raw/2849086f56cea73c60283496e9386a5bef0ff636/norminette.vim -o ~/.vim/plugged/ale/ale_linters/c/norminette.vim
 ```
-#### 1-4.2. Install Norminette
+#### 1-4.2. Norminette 설치
 ```bash
 $ export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 $ gem install --user --pre norminette
 ```
-### 1-5. Set color theme
+### 1-5. 컬러 테마 적용
 ```bash
 $ echo color jellybeans >> ~/.vimrc
 ```
-### 1-6. Set alias for convenience
+### 1-6. 편의를 위한 단축어 설정
 ```bash
 $ alias cc='gcc -Werror -Wall -Wextra'
 $ alias nm='norminette -R -CheckForbiddenSourceHeader'
 ```
-### 1-7. Patch to your current Shell
+### 1-7. 현재 쉘에 적용
 ```bash
 $ source ~/.zshrc
 ```
 ***
-## 2. Plugins
+## 2. 설정에서 사용한 플러그인들
 ### 2-1. tpope/vim-fugitive
-* Enable to use git commands in VIM
-* Usage: :Git add , :Git commit
-- *More Informations on https://github.com/tpope/vim-fugitive*
+* VIM 안에서 git 명령어들을 사용할 수 있게 함
+* 대표 사용법: :Git add, :Git commit
+- *더 많은 정보는 https://github.com/tpope/vim-fugitive*
 
 ### 2-2. tpope/vim-sensible
-* Basic options for VIM
+* VIM에서 사용되는 기본 옵션
 - *More Informations on https://github.com/tpope/vim-sensible*
 
 ### 2-3. preservim/nerdtree
-* File tree explorer
-* Usage: :NERDtree
-- *More Informations on https://github.com/preservim/nerdtree*
+* 파일 탐색기
+* 대표 사용법: :NERDtree
+- *더 많은 정보는 https://github.com/preservim/nerdtree*
 
 ### 2-4. dense-analysis/ale
-* Syntax checker (Always running)
-- *More Informations on https://github.com/dense-analysis/ale*
+* 문법 검사기 (항상 실행되고 있음)
+- *더 많은 정보는 https://github.com/dense-analysis/ale*
 
 #### 2.4-1. Norminette Linter for ALE
-* Help you to code within norminette
-- *More Informations on https://gist.github.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177*
+* ALE에서 Norminette를 참고하여 검사하게 함
+- *더 많은 정보는 https://gist.github.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177*
 
 ### 2-5. preservim/nerdcommenter
-* Help to comment more easily
-- *More Informations on https://github.com/preservim/nerdcommenter*
+* 주석을 더 쉽게 달도록 해줌
+- *더 많은 정보는 https://github.com/preservim/nerdcommenter*
 
-~~### 2-6 zxqfl/tabnine-im~~
-~~* Auto-complete framework~~
-~~- *More Informations on https://tabnine.com/semantic*~~
+### ~~2-6 zxqfl/tabnine-im~~  
+* ~~자동 완성 프레임워크~~  
+* ~~더 많은 정보는 https://tabnine.com/semantic*~~  
 
 ### 2-7. nathanaelkane/vim-indent-guides
-* Display indent levels visually
-- *More Informations on https://github.com/nathanaelkane/vim-indent-guides*
+* 인덴트 수준을 시각적으로 보여줌
+- *더 많은 정보는 https://github.com/nathanaelkane/vim-indent-guides*
 
 ### 2-8. vim-airline/vim-airline
-* More informations on status bar
-* Usage: Mode | Git branch | Filename | Filetype | File encoding | Current Position | Warning/Error form PlugIns
-- *More Informations on https://github.com/vim-airline/vim-airline*
+* VIM 하단의 상태바에 더 많은 정보를 보여줌
+* 정보: 현재 모드 | Git branch | 파일 이름 | 파일 타입 | 파일 인코딩 | 현재 줄 위치 | 플러그인에서 나온 경고/에러
+- *더 많은 정보는 https://github.com/vim-airline/vim-airline*
 
 ### 2-9. airblade/vim-gitgutter
-* Indicate changed lines for GIT things
-- *More Informations on https://github.com/airblade/vim-gitgutter*
+* Git과 관련하여 바뀐 라인들을 표시해줌
+- *더 많은 정보는 https://github.com/airblade/vim-gitgutter*
 
 ### 2-10. nanotech/jellybeans.vim
-* Color theme "jellybeans"
-- *More Informations on https://github.com/nanotech/jellybeans.vim*
+* "jellybeans" 컬러 테마
+- *더 많은 정보는 https://github.com/nanotech/jellybeans.vim*
 
 ### 2-11. ctrlpvim/ctrlp.vim
-* Help to open files more easily, and more quickly
-* (Changed from fzf to ctrlp for integration problem with vim-airline)
-* Usage: Ctrl + p
-- *More Informations on https://github.com/ctrlpvim/ctrlp.vim*
+* 파일을 더 쉽게, 더 빠르게 열게 해줌
+* (원랜 fzf였으나 vim-airline과의 연동 문제로 ctrlp으로 바꿈)
+* 대표 사용법: Ctrl + p
+- *더 많은 정보는 https://github.com/ctrlpvim/ctrlp.vim*
 
 ### 2-12. terryma/vim-multiple-cursors
-* Enable to select multiple things
-- *More Informations on https://github.com/terryma/vim-multiple-cursors*
+* 여러 줄에서 대상을 선택하게 해줌
+- *더 많은 정보는 https://github.com/terryma/vim-multiple-cursors*
 
 ### 2-13. Raimondi/delimitMate
-* Auto-completion for quotes, parens, brackets, etc
-- *More Informations on https://github.com/Raimondi/delimitMate*
+* 괄호나 따옴표같은 것들을 자동으로 완성해줌
+- *더 많은 정보는 https://github.com/Raimondi/delimitMate*
 
 ### 2-14. terryma/vim-smooth-scroll
-* Make scrolling in VIM more pleasant
-- *More Informations on https://github.com/terryma/vim-smooth-scroll*
+* 스크롤을 더 자연스럽게 해줌
+- *더 많은 정보는 https://github.com/terryma/vim-smooth-scroll*
 
 ### 2-15. tpope/vim-surround
-* Manage brackets or quotes more easily
-* Usage: cs'" -> change ' to ", Ctrl+v -> Shift+S+" to wrap with "
-- *More Informations on https://github.com/tpope/vim-surround*
+* 괄호나 따옴표들을 쉽게 생성하고, 교체해줌
+* 대표 사용법:
+* cs'" => 양 옆의 '를 "로 바꿔줌
+* Ctrl + v -> Shift + S + " => 양 옆을 "로 감싸줌
+- *더 많은 정보는 https://github.com/tpope/vim-surround*
 
 ### 2-16. pbondoer/vim-42header
-* VIM header for 42projects
-* Usage: F1 to set 42header
-- *More Informations on https://github.com/pbondoer/vim-42header*
+* 42프로젝트를 위한 VIM 헤더
+* 대표 사용법: F1을 누르면 42헤더가 삽입됨
+- *더 많은 정보는 https://github.com/pbondoer/vim-42header*
 
 ### 2-17. easymotion/vim-easymotion
-* Easy to move cursor
-- *More Informations on https://github.com/easymotion/vim-easymotion*
+* 커서를 더 쉽게 움직임
+- *더 많은 정보는 https://github.com/easymotion/vim-easymotion*
 
 ### 2-18. edkolev/promptline.vim
-* Make shell within VIM
-* Usage: :PromptlineSnapshot
-- *More Informations on https://github.com/edkolev/promptline.vim*
+* VIM 안에서 쉘을 만들어줌
+* 대표 사용법: :PromptlineSnapshot
+- *더 많은 정보는 https://github.com/edkolev/promptline.vim*
 
 ### 2-19. xuhdev/SingleCompile
-* Compile within VIM
-* Usage: Press F9 to compile, Press F10 to run
-- *More informations on https://github.com/xuhdev/SingleCompile*
+* VIM 안에서 컴파일하게 해줌
+* 대표 사용법: F9 => 컴파일, F10 => 컴파일 후 실행
+- *더 많은 정보는 https://github.com/xuhdev/SingleCompile*
 
 ### 2-20. pangloss/vim-simplefold
-* Fold codes easily
-- *More Informations on https://github.com/pangloss/vim-simplefold*
+* 기능 단위로 코드를 접을 수 있게 함 (ex. 함수, While루프, 등등)
+- *더 많은 정보는 https://github.com/pangloss/vim-simplefold*
 
 ### 2-21. vim-scripts/WhiteWash
-* Removes white spaces
-* Press ^M to remove all white spaces
-- *More Informations on https://github.com/vim-scripts/WhiteWash*
+* 필요없는 공백 문자들을 제거함
+* ^M 을 눌러 모든 불필요한 공백 문자들을 제거
+- *더 많은 정보는 https://github.com/vim-scripts/WhiteWash*
 ***
-## 3. VIM local settings
+## 3. VIM 고유 설정
 ### 3-1. set nocompatible
-* enable to move cursors with arrow keys
+* 방향키로 커서를 이동할 수 있게 함
 
 ### 3-2. set number
-* indicate the line number
+* 라인 넘버를 표시함
 
 ### 3-3. set cindent
-* indenting with c-style
+* C 스타일로 인덴트 해줌
 
 ### 3-4. set autoindent
-* auto indenting
+* 자동 인덴팅
 
 ### 3-5. set smartindent
-* smart indenting
+* 스마트 인덴팅
 
 ### 3-6. set hlsearch
-* highlight on search results	
+* 검색 결과를 강조함
 
 ### 3-7. set tabstop=4
-* set tab key to "4" space
+* 탭 키가 4 스페이스가 되도록 설정함
 
 ### 3-8. set shiftwidth=4
-* set shift key to "4" space
+* 시프트가 4 스페이스가 되도록 설정함
 
 ### 3-9. set mouse=a
-* enable using mouse
+* 마우스를 사용할 수 있게 함
 
 ### 3-10. set cursorline
-* highlight on current working line
+* 현재 커서가 위치한 라인을 강조함
 
 ### 3-11. color jellybeans
-* set color theme to "jellybeans"
+* 컬러 테마를 "jellybeans"로 설정함
 
 ### 3-12. nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar> :let @/=_s<Bar><CR>
-* remove all trailing whitespace by pressing F5
+* F5를 눌러 모든  공백 문자들을 제거함
+  
 ***
-## 4. Customization
-* If you are willing to customize this .vimrc file, you have to refer bash style coding guide
-* You might refer guide from here : <https://lug.fh-swf.de/vim/vim-bash/StyleGuideShell.en.pdf>
-* Don't forget ':PlugClean' whenever you have changes in Plugins
+## 4. 커스터마이징
+* 이 프로젝트의 .sh 파일들을 커스터마이징 하려면, 쉘 스크립트 가이드를 참고해야 합니다.
+* 가이드는 여기서 참고하실 수 있습니다.: <https://lug.fh-swf.de/vim/vim-bash/StyleGuideShell.en.pdf>
+* 플러그인에 변화가 생길 경우, ':PlugClean'을 까먹지 마세요!
 ***
-## 5. Feedback
-* You can contact me with fleming@kakao.com
+## 5. 피드백
+* fleming@kakao.com 으로 메일 주세요.
