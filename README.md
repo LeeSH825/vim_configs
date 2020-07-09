@@ -1,27 +1,28 @@
-# vim_configs Guideline
-## 0. Preface 
-### 0-0. How to Download?
-#### **Go to 1-0. and Follow the instruction!**
-### 0-1. Purpose
-#### This configuration file is for **VIM8(especially for pre-installed VIM at Mac OS)**
-###### There are some needs of using VIM while participating '42Seoul'. (So as participator of 42 Educations)
-###### Since all systems in 42Seoul are in environment of 'Mac OS', and it's not convenient for Windows User.
-###### It might be helpful for providing standard VIM configs to 42 participators.
-###### This config does not requires any super-user permission, and works well in 42 environment.
-###### Now, feel free to use VIM in 42Seoul.
-### 0-2. Notations
+# vim_configs 가이드 라인
+## 0. 들어가기 전에..
+### 0-0. 다운로드&패치 방법
+#### **[1-0.](https://github.com/LeeSH825/vim_configs#1-how-to-patch-vim-configuration-file)항목으로 가서 지시 사향을 참고해주세요!**
+### 0-1. 목적
+#### 이 설정 파일은 **VIM8(특히 MacOS에 깔려있는 기본 VIM)** 을 목표로 작성되었습니다.
+##### '42서울'에 참여하는 동안, VIM을 사용할 일이 있을 것입니다. (모든 42교육에 참여하는 학생들도 그럴겁니다.)
+##### 42서울의 모든 시스템은 'MacOS' 기반으로 돌아가며, 이는 윈도우 유저들에게 친숙하지 않은 환경입니다.
+##### 따라서, 42서울의 참여자들에게 VIM 설정의 표준을 제공하면 편할 것이라고 생각했습니다.
+##### 이 설정은 어떠한 슈퍼 유저의 권한도 필요로 하지 않으며, 42 환경에서 잘 작동하는 것이 검증되었습니다.
+##### 이제, 42서울에서 VIM을 사용하는 것에 두려워하지 마세요.
+
+### 0-2. 표기
 #### 0-2.1. '$'
-* commands at the bash shell
+* 쉘에서의 명령어
 #### 0-2.2. ':'
-* commands at the VIM command line
-### 0-3. How to return to previous VIM configuration (original or modified one)
-#### You can just download <a href="https//raw.githubusercontent.com/LeeSH825/vim_configs/master/restore.sh" download="restore.sh">restore.sh</a> and run it at terminal.
-###### (If you have some trouble with running it, you can do $ chmod 755 restore.sh)
+* VIM의 명령모드에서의 명령어
+### 0-3. 이전 VIM 설정으로 돌리는 방법
+#### <a href="https//raw.githubusercontent.com/LeeSH825/vim_configs/master/restore.sh" download="restore.sh">restore.sh</a>을 다운로드 하고, 터미널에서 실행하세요.
+###### (이 과정에서 문제가 생긴다면, $ chmod 755 restore.sh 후에 시도해보세요.)
 ```bash
 $ ./restore.sh
 ```
-#### Or you can get normal VIM by removing .vimrc, ~/.vim and replace it by previous configuration files.
-#### (When you've patched configuration by auto-script.sh, there must be .vimrc.backup and /.vim_backup)
+#### 아니면, ~/.vimrc, ~/.vim/ 을 삭제하고 이전 설정 파일로 교체하면 됩니다.
+#### (auto-script.sh로 설정을 패치한 경우, ~/.vimrc.backup 파일과 ~/.vim_backup/ 폴더가 백업되어 있습니다.)
 ```bash
 $ rm -rf ~/.vimrc ~/.vim
 $ mv ~/.vimrc.backup ~/.vimrc
