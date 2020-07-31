@@ -40,6 +40,9 @@ function install_plugins(){
 }
 
 #Shell Script starts from here
+
+# todo: reliable on current shell
+
 isMac=`uname -a | grep -o Mac`
 if [ -e ~/.vimrc ]; then
 	echo ".vimrc file already exists."
