@@ -99,7 +99,7 @@ function set_alias(){
         case "$alias_res1" in
             [yY])
             shopt -s expand_aliases
-            echo alias cc=\'gcc -Wall -Wextra -Werror\' >> ~/.$SHELLTYPErc
+            echo alias cc=\'gcc -Wall -Wextra -Werror\' >> ~/.${SHELLTYPE}rc
             is_alias=1
             ;;
             [nN])
@@ -120,7 +120,7 @@ function set_alias(){
             case "$alias_res2" in
                 [yY])
                 shopt -s expand_aliases
-                echo alias cc=\'norminette -R CheckForbiddenSourceHeader\' >> ~/.$SHELLTYPErc
+                echo alias cc=\'norminette -R CheckForbiddenSourceHeader\' >> ~/.${SHELLTYPE}rc
                 is_alias=1
                 ;;
                 [nN])
@@ -134,8 +134,8 @@ function set_alias(){
     fi
 
     if [ $is_alias -eq 1 ]; then
-        echo You must type \"source ./$SHELLTYPErc\" to use those aliases in current shell.\(just for one time.\)
-        echo You can see your aliases by typing \"alias\"
+        echo -e "\nYou must type \"source ~/.${SHELLTYPE}rc\" to use those aliases in current shell.(just for one time.)"
+        echo -e "You can see your aliases by typing \"alias\"\n"
     fi
 }
 
