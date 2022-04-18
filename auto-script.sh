@@ -120,7 +120,7 @@ function set_alias(){
             case "$alias_res2" in
                 [yY])
                 shopt -s expand_aliases
-                echo alias cc=\'norminette -R CheckForbiddenSourceHeader\' >> ~/.${SHELLTYPE}rc
+                echo alias nm=\'norminette -R CheckForbiddenSourceHeader\' >> ~/.${SHELLTYPE}rc
                 is_alias=1
                 ;;
                 [nN])

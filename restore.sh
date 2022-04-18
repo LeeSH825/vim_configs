@@ -1,6 +1,7 @@
 #!/bin/bash
 
-echo "Do you want to restore VIM to previous state?[Y/n]:"
+echo "Do you want to restore VIM to previous state?"
+echo "([Y]es / [N]o)"
 read re
 case "$re" in
 	[yY])
