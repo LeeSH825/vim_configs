@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # collect system info
-CUR_PATH=`pwd`
+dir_name=`dirname $0`
+CUR_PATH="`pwd`${dir_name:1}"
 SHELLTYPE=`echo $SHELL | cut -d'/' -f3`
 
 function update_configs(){
+	cd ${CUR_PATH}
 	git pull 
 	echo "What setting you want to update?"
 	echo "[D]efault setting / 42S[E]OUL setting"
