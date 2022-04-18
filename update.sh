@@ -27,8 +27,7 @@ function update_configs(){
 }
 
 function update_plugins(){
-	vim -c "PlugUpdate" -c "PlugUpgrade" 2>/dev/null
-	vim -c "q"
+	vim -c "PlugUpdate" -c "PlugUpgrade" -c "q" -c "q" 2>/dev/null
 }
 
 #Script starts from here
