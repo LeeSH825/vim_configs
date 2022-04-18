@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # collect system info
-PATH=`pwd`
+CUR_PATH=`pwd`
 SHELLTYPE=`echo $SHELL | cut -d'/' -f3`
 
 function update_configs(){
@@ -21,6 +21,7 @@ function update_configs(){
 			exit 1
 			;;
 	esac
+	echo "color jellybeans" >> ~/.vimrc
 }
 
 function update_plugins(){
@@ -31,14 +32,14 @@ function update_plugins(){
 #Script starts from here
 update_configs
 update_plugins
-echo `echo $SHELL | find -exec cmd {}\`
+# echo `echo $SHELL | find -exec cmd {}\`
 echo "Do you want to set alias update_vim=bash {current_path}/update.sh ?"
 echo "([Y]es / [N]o)"
 read res
 case "$res" in
 	[yY])
 	shopt -s expand_aliases
-	echo alias update_vim=\'bash \${PATH}\/update\.sh\' >> ~/.${SHELLTYPE}rc
+	echo alias update_vim=\'bash \${CUR_PATH}\/update\.sh\' >> ~/.${SHELLTYPE}rc
 	;;
 	[nN])
 	;;
